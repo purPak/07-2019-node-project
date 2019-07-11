@@ -1,3 +1,20 @@
 <html>
-
+	<body>
+		<script type="text/javascript" src="formulaire.js"></script>
+		<div id="form">
+			<form method="POST" action="localhost:3600/confirmation">
+				<label for="nom">Nom de l'étudiant</label>
+				<input type="text" name="nom" id="nom">
+				<label for="prenom">Prenom de l'étudiant</label>
+				<input type="text" name="prenom" id="prenom">
+				<label for="mail">Mail</label>
+				<input type="text" name="mail" id="mail">
+				<label for="projet">Nom de projet</label>
+				<input type="text" name="projet" id="projet">
+				<label for="description">Description du projet</label>
+				<input type="text" name="description" id="description">
+			</form>
+		</div>
+			<button id="btnAdd">Ajouter un Etudiant</button>
+	</body>
 </html>
