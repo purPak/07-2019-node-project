@@ -1,27 +1,35 @@
-const express = require('express');
-var path = require('path');
-//Set up express router
-const router = express.Router();
 
-//Route that show registration-form
-router.get('/',(req,res)=>{
+var path = require('path');
+const bodyParser = require('body-parser');
+
+module.exports = (app) => {
+
+app.use(bodyParser.urlencoded({ extended: true }));
+
+//Route of the home page
+app.get('/',(req,res)=>{
     res.render('hackhaton/index.html');
 });
 
 //Route that show registration-form
-router.get('/new',(req,res)=>{
+app.get('/new',(req,res)=>{
     res.render("hackhaton/formulaire.html");
     //res.sendFile(path.resolve('formulaire.html'));
 });
 
-//Route that show registration-form
-router.get('/formulaire.js',(req,res)=>{
+// put js in public
+app.get('/formulaire.js',(req,res)=>{
     res.sendFile(path.resolve('formulaire.js'));
     //res.send("formulaire");
 });
-//Route that add registration-form in db  
-router.post('/',(req,res)=>{
-    res.send("Post form");
+
+// admin back office
+app.get('/admin',(req,res)=>{
+    res.render('admin/index.html');
 });
 
-module.exports = router;
+//Route that add registration-form in db  
+app.post('/hackhaton/confirmation',(req,res)=>{
+    res.render("hackhaton/confirmation.html", {name: req.body.name});
+});
+}

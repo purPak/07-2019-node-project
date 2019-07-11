@@ -1,17 +1,15 @@
 //dupliquer un element avec un id
 function cloneElement(id){
-  //--Recup l'objet source
+  //-get src object
   var src = document.getElementById(id);
 
   if(src){
-    //-- Creation d'un clone
+    //-- create clone
     var clone = src.cloneNode(true);
     clone.id = "sub";
-   /* clone.className = "subform";
-    clone.style.display = none;*/
-    //-- Ajout du clone
+    //-- Add the clone
     document.getElementById("subForm").appendChild(clone);
-	//on incremente une var pour bloquer le form a 5 etudiant max
+	//increase nb form to check the max set to 5
 	 nbForm++;
    console.log(nbForm);
     if (nbForm == 4)
@@ -20,5 +18,5 @@ function cloneElement(id){
 }
 
 let nbForm = 0;
-
+// add event onclick to add new form user
 document.getElementById("btn").addEventListener("click", function(){cloneElement("form")}, false); 
