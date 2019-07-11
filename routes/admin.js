@@ -5,7 +5,7 @@ const router = express.Router();
 
 //Route that show all students 
 router.get('/',(req,res)=>{
-    res.send("List of students");
+    res.render('admin/index.html');
 });
 
 module.exports = router;

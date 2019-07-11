@@ -1,5 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const nunjucks = require('nunjucks');
+
 
 //Connect to Db
 mongoose.connect('mongodb://localhost:27017');
@@ -21,4 +23,10 @@ app.use('/admin', require('./routes/admin.js'));
 //Connect to Express server
 app.listen(port,hostname, ()=> {
     console.log(`Server running at http://${hostname}:${port}/`);
+})
+
+// Set up the rendering with Nunjucks
+nunjucks.configure('views',{
+    autoescape : true,
+    express : app
 })
