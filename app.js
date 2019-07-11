@@ -16,9 +16,9 @@ const hostname = '127.0.0.1';
 
 //Set up routing 
 app.use('/', require('./routes/hackhaton.js'));
+app.use('/admin', require('./routes/admin.js'));
 
 //Connect to Express server
 app.listen(port,hostname, ()=> {
     console.log(`Server running at http://${hostname}:${port}/`);
 })
-
