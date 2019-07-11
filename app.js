@@ -1,10 +1,11 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const nunjucks = require('nunjucks');
+const bodyparser = require('body-parser');
 
 
 //Connect to Db
-mongoose.connect('mongodb://localhost:27017');
+mongoose.connect('mongodb://localhost/hackhaton', {useNewUrlParser : true});
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function callback () {
@@ -25,8 +26,11 @@ app.listen(port,hostname, ()=> {
     console.log(`Server running at http://${hostname}:${port}/`);
 })
 
+//Set body-parser
+app.use(bodyParser.urlencoded());
+
 // Set up the rendering with Nunjucks
 nunjucks.configure('views',{
     autoescape : true,
     express : app
-})
+});
