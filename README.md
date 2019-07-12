@@ -2,3 +2,6 @@
 
 Jimmy Mathurin
 Yacine Lahjaily 
+
+## After Clone 
+To complete
