@@ -1,8 +1,7 @@
 const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
-
-let blockSchema = new Schema({
+let eleve = new Schema({
 	nom: {
 		type: String,
 		default: "nul"
@@ -14,6 +13,17 @@ let blockSchema = new Schema({
 	mail: {
 		type: String,
 		default: "nul"
+	}
+});
+
+let projet = new Schema({
+	nom: {
+		type: String,
+		default: "nul"
+	},
+	prenom: {
+		type: String,
+		default: "nul"
 	},
 	projet: {
 		type: String,
@@ -23,13 +33,9 @@ let blockSchema = new Schema({
 		type: String,
 		default: "nul"
 	},
-	nom0: {
-		type: String,
-		default: "nul"
-	},
-	prenom0: {
-		type: String
-	}
+	eleves: [eleve]
+	
 });
 
-module.exports = mongoose.model('Hackhatons', blockSchema);
+
+module.exports = mongoose.model('Hackhatons', projet);

@@ -11,6 +11,12 @@ app.route('/hackhaton/confirmation')
 .get(hackhaton.list_all_hackhatons)
   .post(hackhaton.create_a_hackhaton);
 
+app.route('/admin/projets')
+.get(hackhaton.list_all_hackhatons);
+
+app.route('/admin/students')
+.get(hackhaton.list_all_students);
+
 //Route of the home page
 app.get('/',(req,res)=>{
     res.render('hackhaton/index.html');

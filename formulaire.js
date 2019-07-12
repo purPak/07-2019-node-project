@@ -16,6 +16,7 @@ function cloneElement(id){
     document.getElementById("subForm").appendChild(clone);
 	//increase nb form to check the max set to 5
 	 nbForm++;
+   document.getElementById("nbForm").value = nbForm;
    console.log(nbForm);
     if (nbForm == 4)
     	document.getElementById("btn").style.display = 'none';
