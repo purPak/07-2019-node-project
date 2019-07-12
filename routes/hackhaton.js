@@ -5,6 +5,11 @@ const bodyParser = require('body-parser');
 module.exports = (app) => {
 
 app.use(bodyParser.urlencoded({ extended: true }));
+const hackhaton = require('../Controllers/controllers.js');
+
+app.route('/hackhaton/confirmation')
+.get(hackhaton.list_all_hackhatons)
+  .post(hackhaton.create_a_hackhaton);
 
 //Route of the home page
 app.get('/',(req,res)=>{
@@ -32,4 +37,5 @@ app.get('/admin',(req,res)=>{
 app.post('/hackhaton/confirmation',(req,res)=>{
     res.render("hackhaton/confirmation.html", {name: req.body.name});
 });
+
 }
