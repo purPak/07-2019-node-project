@@ -8,10 +8,10 @@ function cloneElement(id){
     var clone = src.cloneNode(true);
     clone.id = "sub" + nbForm;
     var inputs = clone.getElementsByTagName('input');
-    for(let i in inputs){
-        //i.setAttribute( "name", name + nbForm);
-          console.log(i);  
+    for(let i= 0; i < inputs.length;i++) {
+        (inputs[i]).setAttribute( "name", inputs[i].name + nbForm);
     }
+        
     //-- Add the clone
     document.getElementById("subForm").appendChild(clone);
 	//increase nb form to check the max set to 5

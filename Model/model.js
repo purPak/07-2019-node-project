@@ -23,6 +23,13 @@ let blockSchema = new Schema({
 		type: String,
 		default: "nul"
 	},
+	nom0: {
+		type: String,
+		default: "nul"
+	},
+	prenom0: {
+		type: String
+	}
 });
 
 module.exports = mongoose.model('Hackhatons', blockSchema);
