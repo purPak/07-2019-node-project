@@ -1,14 +1,14 @@
 {% extends "layout.html" %}
 
 {% block content %}
-    <p>list of projects</p>
+    <h1>list of projects</h1>
     {% for p in projects %}
-        <div>
-            <h1>{{p.name}}</h1>
+        <div style="border: 2px; border-radius: 5px;">
+            <h2>{{p.name}}</h2>
             <p>{{p.description}}</p>
             {% for s in p.students %}
-                <p>s.firstname</p>
-                <p>s.lasttname</p>
+                <p>{{s.firstname}}</p>
+                <p>{{s.lasttname}}</p>
             {% endfor %}
         </div>    
     {% endfor %}

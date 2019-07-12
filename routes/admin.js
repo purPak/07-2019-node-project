@@ -8,10 +8,9 @@ const Student = require('../models/Student');
 //Set up express router
 const router = express.Router();
 
-//Route that show all projects 
+//Route that show all projects and projects' student
 router.get('/projects',(req,res)=>{
     Project.find({}).populate('students').then(projects=>{
-        console.log(projects);
         res.render('admin/showProject.html', {projects : projects});
     })
 });
@@ -20,7 +19,6 @@ router.get('/projects',(req,res)=>{
 router.get('/students',(req,res)=>{
     Student.find().then(students=>{
         res.render('admin/index.html', {students : students});
-        console.log(students);
     })
 });
 

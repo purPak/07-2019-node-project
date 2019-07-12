@@ -1,14 +1,11 @@
 const express = require('express');
-<<<<<<< HEAD
 const mongoose = require('mongoose');
 
 //Import Models
-
 const Student = require('../models/Student');
 
-=======
 var path = require('path');
->>>>>>> 0abdb454a8346941cdcef7f8dec736784930e30c
+
 //Set up express router
 const router = express.Router();
 
