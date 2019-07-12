@@ -3,13 +3,15 @@
 {% block content %}
     <h1>list of projects</h1>
     {% for p in projects %}
-        <div style="border: 2px; border-radius: 5px;">
+        <div style="border: 2px solid black; border-radius: 5px;">
             <h2>{{p.name}}</h2>
             <p>{{p.description}}</p>
+            <ul>
             {% for s in p.students %}
-                <p>{{s.firstname}}</p>
-                <p>{{s.lasttname}}</p>
+                <li>{{s.firstname}} {{s.lasttname}}</li>
             {% endfor %}
+            </ul>    
+            
         </div>    
     {% endfor %}
 {% endblock %}
