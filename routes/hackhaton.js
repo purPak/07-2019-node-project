@@ -1,9 +1,14 @@
 const express = require('express');
+const mongoose = require('mongoose');
+
+//Import Models
+
+const Student = require('../models/Student');
 
 //Set up express router
 const router = express.Router();
 
-//Route that show registration-form
+//Route that show the homepage
 router.get('/',(req,res)=>{
     res.render('hackhaton/index.html');
 });

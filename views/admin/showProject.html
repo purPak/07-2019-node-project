@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <p>list of projects</p>
+    {% for p in projects %}
+        <div>
+            <h1>{{p.name}}</h1>
+            <p>{{p.description}}</p>
+            {% for s in p.students %}
+                <p>s.firstname</p>
+                <p>s.lasttname</p>
+            {% endfor %}
+        </div>    
+    {% endfor %}
+{% endblock %}
+

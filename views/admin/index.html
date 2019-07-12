@@ -1,6 +1,12 @@
 {% extends "layout.html" %}
 
 {% block content %}
-    <p>admin view</p>
+    <p>list of students</p>
+    {% for s in students %}
+        <div>
+            <h1>{{s.firstname}} {{s.lastname}}</h1>
+        </div>    
+    {% endfor %}
+        
 {% endblock %}
 

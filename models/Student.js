@@ -9,8 +9,8 @@ StudentSchema.virtual('projects', {
     ref : 'Project',
     localField : '_id',
     foreignField : 'students'
-})
+});
 
-const Student = mongoose.model('Student', StudentSchema);
+const Student = mongoose.model('Student', StudentSchema, 'student');
 
 module.exports = Student;
